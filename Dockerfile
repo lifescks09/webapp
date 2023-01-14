@@ -1,6 +1,7 @@
 FROM centos
 
 MAINTAINER lifescks09@gmail.com
+RUN yum -y install tar
 
 RUN mkdir /opt/tomcat/
 
