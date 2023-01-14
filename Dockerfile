@@ -1,6 +1,9 @@
 FROM centos
 
 MAINTAINER lifescks09@gmail.com
+RUN cd /etc/yum.repos.d/
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 Run yum -y update && \
     yum -y install wget && \
     yum install -y tar.x86_64 && \
