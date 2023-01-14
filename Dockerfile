@@ -1,7 +1,10 @@
 FROM centos
 
 MAINTAINER lifescks09@gmail.com
-RUN yum install tar
+Run yum -y update && \
+    yum -y install wget && \
+    yum install -y tar.x86_64 && \
+    yum clean all
 
 RUN mkdir /opt/tomcat/
 
